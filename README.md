@@ -1,5 +1,5 @@
 # What Is Missing For Graph Homophily? Disentangling Graph Homophily For Graph Neural Networks
-Code Implementation for ["What Is Missing For Graph Homophily? Disentangling Graph Homophily For Graph Neural Networks" (Yilun Zheng $et\ al.$ 2024)](https://arxiv.org/pdf/2406.18854v1)
+Code Implementation for ["What Is Missing For Graph Homophily? Disentangling Graph Homophily For Graph Neural Networks"](https://arxiv.org/pdf/2406.18854v1)
 
 ## Overview
 The repository is organised as follows:
