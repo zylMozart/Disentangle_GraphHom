@@ -1,6 +1,41 @@
 # What Is Missing For Graph Homophily? Disentangling Graph Homophily For Graph Neural Networks
 Code Implementation for ["What Is Missing For Graph Homophily? Disentangling Graph Homophily For Graph Neural Networks"](https://arxiv.org/pdf/2406.18854v1)
 
+Conventional homophily measurements only consider the label aspect, ignoring structural and feature aspects. This definition leads to confusing phenomena such as the mid-homophily "pitfall," "good" or "bad" homophily, and feature shuffling. In this paper, we fill the missing part by disentangling graph homophily into label, structural, and feature aspects. By considering these aspects collectively, we introduce the Tri-Hom metric based on CSBM-3H. Our proposed theorems effectively explain these confusing phenomena and aligns well with the performance of GNNs. The high correlation with GNN behavior on 31 real-world benchmark datasets confirms the superiority of Tri-Hom over 17 existing metrics.
+
+#### Disentangled Homophily Definitions
+
+<p align="center">
+  <img alt="Light" src="imgs/hom_df.png" width="70%">
+</p>
+
+#### Tri-Hom
+
+Tri-Hom for graph-agnostic models: $\mathcal{J}_h^{\neg\mathcal{G}}=\frac{1-(\frac{h_F}{\rho(\mathbf{A})})^2(C(\frac{1-h_L}{C-1})^2+C\frac{(1-h_S)^2}{C-1}+(\frac{h_L C-1}{C-1})^2)}{\left[1- (\frac{h_F}{\rho(\mathbf{A})}) (\frac{h_L C-1}{C-1})\right]^2}$, 
+
+Tri-Hom for graph-aware models:  $\mathcal{J}_h^{\mathcal{G}}=\frac{(\frac{h_L C-1}{C-1})^2}{C(\frac{1-h_L}{C-1})^2+C\frac{(1-h_S)^2}{C-1}+(\frac{h_L C-1}{C-1})^2}\mathcal{J}_h^{\neg\mathcal{G}}$, where $h_L$, $h_S$, and $h_F$ refers to label homophily, structural homophily, and feature homophily respectively.
+
+#### Synthetic Dataset Experiment: Performance on synthetic datasets align well with numerical results
+
+<p align="center">
+  <img alt="Light" src="imgs/gnn_correlation.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark" src="imgs/mlp_correlation.png" width="46%">
+</p>
+
+#### Real-World Dataset Experiment: Tri-Hom achieves the highest correlation with 17 Homophily Measurements on 31 Datasets
+
+<p align="center">
+  <img alt="Light" src="imgs/exp_cor.png" width="70%">
+</p>
+
+<p align="center">
+  <img alt="Light" src="imgs/hom_lvl1.png" width="46%">
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark" src="imgs/hom_lvl2.png" width="47.5%">
+</p>
+
+
 ## Overview
 The repository is organised as follows:
 ```
