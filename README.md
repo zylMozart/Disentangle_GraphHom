@@ -1,5 +1,5 @@
 # What Is Missing For Graph Homophily? Disentangling Graph Homophily For Graph Neural Networks
-Code Implementation for ["What Is Missing For Graph Homophily? Disentangling Graph Homophily For Graph Neural Networks"](https://arxiv.org/pdf/2406.18854v1)
+Code Implementation for **Neurips 2024:** ["What Is Missing For Graph Homophily? Disentangling Graph Homophily For Graph Neural Networks"](https://arxiv.org/pdf/2406.18854v1)
 
 Conventional homophily measurements only consider the label aspect, ignoring structural and feature aspects. This definition leads to confusing phenomena such as the mid-homophily "pitfall," "good" or "bad" homophily, and feature shuffling. In this paper, we fill the missing part by disentangling graph homophily into label, structural, and feature aspects. By considering these aspects collectively, we introduce the Tri-Hom metric based on CSBM-3H. Our proposed theorems effectively explain these confusing phenomena and aligns well with the performance of GNNs. The high correlation with GNN behavior on 31 real-world benchmark datasets confirms the superiority of Tri-Hom over 17 existing metrics.
 
