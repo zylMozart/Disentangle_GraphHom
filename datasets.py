@@ -306,7 +306,8 @@ class Dataset:
             X0 = torch.sparse.mm(I-w*A,X)
             X0_cls = ((X0.t()@Y)/Y.sum(dim=0).repeat(self.num_node_features,1))
             X0_cls = (X0_cls@Y.t()).t()
-            v = torch.pow(X0_cls-X0,2).sum(dim=0)
+            # v = torch.pow(X0_cls-X0,2).sum(dim=0)
+            v = torch.abs(X0_cls-X0).sum(dim=0)
             v_lst.append(v)
         v_lst = torch.stack(v_lst)
 
@@ -320,8 +321,8 @@ class Dataset:
         # print("h_F of {:>20}: {:.2f}|{:.2f}| ".format(self.name,h_F_graph,np.mean(h_F_feat)),end='')
         # print(h_F_feat[:10])
 
-        # return h_F_graph,np.mean(h_F_feat)
-        return np.mean(h_F_feat),spectral_radius
+        return h_F_graph,np.mean(h_F_feat)
+        # return np.mean(h_F_feat),spectral_radius
 
 def random_graph_with_feature(
         num_node,num_class,node_degree,feat_dim,
